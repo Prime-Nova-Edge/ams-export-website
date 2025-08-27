@@ -1,0 +1,58 @@
+    /* Top Bar */
+    .top-bar {
+      height: 7vh;
+      background: #324675;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 2rem;
+      color: white;
+
+    }
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+        font-size: clamp(0.5rem, 1.5vw, 1rem);
+    }
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar */
+    .navbar {
+  
+      background: #fff;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+      font-size: 1.05rem;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #368ce1 !important;
+    }
+    .nav-link {
+      margin: 0 10px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #368ce1 !important;
+    }
+    .navbar-collapse {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 0 0 8px 8px;
+    }
+
+.nav-link.active {
+  color: #0d6efd; /* Bootstrap primary color */
+  font-weight: 600;
+}
+
+
+
+@media (min-width: 576px) {
+  .top-bar {
+    font-size: 0.4rem;
+  }
+}

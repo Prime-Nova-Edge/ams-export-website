@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers — Join Our Export Team</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background: #f8fafc; color: #333; }
+    
+    /* HERO */
+    .hero {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: white;
+      border-radius: 0 0 2rem 2rem;
+      text-align: center;
+    }
+    .hero h1 { animation: fadeInDown 1s ease; }
+    .hero p { animation: fadeInUp 1.2s ease; }
+    .pill {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: .4rem .9rem;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: .9rem;
+      backdrop-filter: blur(4px);
+      transition: all 0.3s;
+    }
+    .pill:hover { background:#fff; color:#0d6efd; transform:scale(1.05); }
+
+    /* JOB CARDS */
+    .card-job {
+      border: none;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: all .3s;
+      opacity: 0; transform: translateY(30px);
+    }
+    .card-job.show { opacity: 1; transform: translateY(0); }
+    .card-job:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .card-job h5 { color: #0d6efd; }
+    .badge-outline { background: #e7f1ff; color: #0d6efd; border: none; font-size: .8rem; }
+    .muted { color: #6b7280; }
+    .job-tags span { font-size: .75rem; padding: .3rem .6rem; border-radius: .5rem; background: #f3f4f6; }
+
+    /* SECTION TITLES */
+    h2.section-title {
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+      position: relative;
+    }
+    h2.section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg,#0d6efd,#6610f2);
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInDown { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+<!-- HERO -->
+<div class="hero">
+  <small class="text-uppercase">We’re hiring</small>
+  <h1 class="display-5 fw-bold mt-2">Grow with us — <span style="color:#ffd43b;">export to the world</span></h1>
+  <p class="lead mt-3">Join our export and trading team to connect global markets.<br> Explore logistics, sales, quality assurance, and international trade roles.</p>
+  <div class="d-flex gap-2 flex-wrap justify-content-center mt-4">
+    <span class="pill">🌍 International Exposure</span>
+    <span class="pill">💼 Competitive Salary</span>
+    <span class="pill">📈 Career Growth</span>
+    <span class="pill">✈️ Global Travel</span>
+  </div>
+</div>
+
+<!-- JOB LIST -->
+<div class="container mt-5">
+  <h2 class="section-title">Open Positions</h2>
+  <div id="jobList" class="row g-4"></div>
+</div>
+
+  <div id="footer-container"></div>
+
+  <script>
+        // Load header and footer
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        const current = location.pathname.split("/").pop();
+        document.querySelectorAll('.nav-link').forEach(link => {
+          if (link.getAttribute('href') === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+      });
+  </script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const jobs = [
+    { title: 'Export Sales Executive', team: 'Sales', location: 'Trichy, India', desc: 'Develop international client relationships and grow export sales.', tags: ['B2B Sales','International Trade','Negotiation'] },
+    { title: 'Logistics Coordinator', team: 'Logistics', location: 'Chennai Port Office', desc: 'Handle shipping documentation, customs clearance, and freight.', tags: ['Shipping Docs','Customs','Freight Forwarding'] },
+    { title: 'Quality Assurance Specialist', team: 'Quality', location: 'Factory Unit — Trichy', desc: 'Inspect products before dispatch and ensure export compliance.', tags: ['QC','ISO','Compliance'] },
+    { title: 'International Business Development Manager', team: 'Sales', location: 'Remote / Overseas Travel', desc: 'Expand export business to new markets and manage distributor networks.', tags: ['Business Dev','Export','Global Markets'] }
+  ];
+
+  function renderJobs() {
+    let container = document.getElementById('jobList');
+    container.innerHTML = '';
+    jobs.forEach((job, i) => {
+      let delay = i * 200; // stagger animation
+      let card = document.createElement('div');
+      card.className = "col-md-6 col-lg-4";
+      card.innerHTML = `
+        <div class="card-job h-100">
+          <h5 class="mb-2">${job.title}</h5>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="muted">${job.team}</span>
+            <span class="badge badge-outline">${job.location}</span>
+          </div>
+          <p class="muted small">${job.desc}</p>
+          <div class="job-tags d-flex flex-wrap gap-2 mt-3">
+            ${job.tags.map(t=>`<span>${t}</span>`).join('')}
+          </div>
+        </div>`;
+      container.appendChild(card);
+      setTimeout(()=> card.querySelector('.card-job').classList.add('show'), delay);
+    });
+  }
+
+  renderJobs();
+</script>
+</body>
+</html>

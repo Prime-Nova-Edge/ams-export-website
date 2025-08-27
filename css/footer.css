@@ -1,0 +1,22 @@
+.site-footer {
+  background-color: #f0f0f0; /* Grey background */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.site-footer p {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.social-icons a {
+  color: #555; /* icon color */
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #000; /* darker on hover */
+}

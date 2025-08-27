@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Company - Amsa Exports</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Page Header */
+    .page-header {
+      height: 50vh;
+      background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?fm=jpg&q=60&w=3000') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeDown 1.2s ease-out forwards;
+    }
+
+    /* Stats Section */
+    .stats-box h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #212529;
+    }
+    .stats-box p {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
+
+      .zoom-card {
+    transition: transform 0.3s ease;
+  }
+  .zoom-card:hover {
+    transform: scale(1.05);
+  }
+
+  .fixed-img {
+  width: 100%;        /* take full card width */
+  height: 200px;      /* force equal height for all images */
+  object-fit: cover;  /* crop the image nicely without distortion */
+  border-radius: 0.5rem 0.5rem 0 0; /* rounded corners only at the top */
+}
+
+
+    /* Animations */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="header-container"></div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>About Company</h1>
+</div>
+
+<!-- Stats + Image + Text Section -->
+<div class="container py-5 stats-section">
+  <div class="row align-items-center g-5">
+     <div class="col-md-1 text-center text-md-start stats-box"></div>
+    <!-- Left Column - Numbers -->
+    <div class="col-md-2 text-center text-md-start stats-box ">
+      <h3 class="counter mt-2" data-target="20500">0</h3><p>Successfully Trained</p>
+      <h3 class="counter" data-target="450">0</h3><p>Students Community</p>
+      <h3 class="counter" data-target="20500">0</h3><p>Global Reach</p>
+    </div>
+
+    <!-- Middle Column - Image -->
+    <div class="col-md-5 text-center">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" alt="Student working" class="img-fluid rounded shadow">
+    </div>
+
+    <!-- Right Column - Text Content -->
+    <div class="col-md-3 text-center text-md-start">
+      <h6 class="text-primary fw-bold text-center">ABOUT COMPANY</h6>
+      <h2 class="fw-bold mb-3 text-center">Creative agency & their best solutions</h2>
+      <p class="text-muted mb-4 text-center">
+        Amsa Exports provides durable, innovative, and premium textile solutions trusted worldwide.
+      </p>
+      <div class="text-center">
+  <a href="#" class="btn btn-primary rounded-pill px-4">Read More</a>
+      </div>
+    
+    </div>
+         <div class="col-md-1 text-center text-md-start stats-box"></div>
+  </div>
+</div>
+
+
+<div class="container py-5">
+  <div class="row g-4 align-items-center">
+
+    <!-- Left Column - 4 Equal Cards -->
+    <div class="col-md-6">
+      <div class="row g-3">
+        <!-- Card 1 -->
+        <div class="col-6">
+          <div class="card h-100 shadow zoom-card">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400" class="card-img-top fixed-img" alt="Card 1">
+            <div class="card-body text-center">
+              <h6 class="card-title">Quality</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-6">
+          <div class="card h-100 shadow zoom-card">
+            <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=400" class="card-img-top fixed-img" alt="Card 2">
+            <div class="card-body text-center">
+              <h6 class="card-title">Innovation</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-6">
+          <div class="card h-100 shadow zoom-card">
+            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=400" class="card-img-top fixed-img" alt="Card 3">
+            <div class="card-body text-center">
+              <h6 class="card-title">Global Reach</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-6">
+          <div class="card h-100 shadow zoom-card">
+            <img src="https://thumbs.dreamstime.com/b/expertise-button-means-skilled-specialist-meaning-proficiency-38159784.jpg?w=400&h=100" class="card-img-top fixed-img" alt="Card 4">
+            <div class="card-body text-center">
+              <h6 class="card-title">Expertise</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column - Content -->
+    <div class="col-md-6">
+      <h6 class="text-primary fw-bold text-center">WHY CHOOSE US</h6>
+      <h2 class="fw-bold mb-3 text-center">Trusted by Clients Worldwide</h2>
+      <p class="text-muted mb-4 text-center">
+        At Amsa Exports, we combine innovation, quality, and global reach to deliver textile solutions that meet international standards. Our dedicated team ensures excellence in every detail.
+      </p>
+      <div class="text-center">
+      <a href="#" class="btn btn-primary rounded-pill px-4">Explore More</a>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="footer-container"></div>
+
+<!-- Load header dynamically -->
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+      const current = location.pathname.split("/").pop();
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if(link.getAttribute('href') === current){
+          link.classList.add('active');
+        }
+      });
+    });
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter');
+  const speed = 80; // smaller = faster
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText.replace(/\D/g,'');
+        const increment = target / speed;
+
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment).toLocaleString() + "+";
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target.toLocaleString() + "+";
+        }
+      };
+      updateCount();
+    });
+  };
+  const statsSection = document.querySelector('.stats-section');
+  const observer = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting){
+      animateCounters();
+      observer.disconnect();
+    }
+  }, { threshold: 0.5 });
+  observer.observe(statsSection);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
